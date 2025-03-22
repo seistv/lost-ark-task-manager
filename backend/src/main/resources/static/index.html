@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Ark Task Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js" defer></script>
+    <script src="services/taskService.js" defer></script>
+</head>
+<body ng-app="LostArkApp" ng-controller="TaskController">
+    <div class="container">
+        <h1>Lost Ark Task Tracker</h1>
+
+        <!-- Daily & Weekly Tasks -->
+        <div class="table-container">
+            <h2>Tasks</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tasks</th>
+                        <th ng-repeat="character in characters">{{ character.characterName || 'Unknown' }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="uniqueTasks.length === 0">
+                        <td colspan="100%">No tasks available</td>
+                    </tr>
+                    <tr ng-repeat="task in uniqueTasks">
+                        <td>{{ task.taskName }}</td>
+                        <td ng-repeat="character in characters">
+                            <input type="checkbox" ng-model="taskStatus[character.characterId][task.taskId]" 
+                                   ng-change="toggleTask(character.characterId, task.taskId)">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Gold-Earning Raids Section -->
+        <div class="table-container">
+            <h2>Gold-Earning Raids</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Raid Name</th>
+                        <th ng-repeat="character in characters">{{ character.characterName || 'Unknown' }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="raids.length === 0">
+                        <td colspan="100%">No raids available</td>
+                    </tr>
+                    <tr ng-repeat="raid in raids">
+                        <td>{{ raid.raidName }}</td>
+                        <td ng-repeat="character in characters">
+                            <input type="checkbox" 
+                                   ng-model="goldEarningRaids[character.characterId][raid.raidId]"
+                                   ng-change="toggleGoldEarningRaid(character.characterId, raid.raidId)">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

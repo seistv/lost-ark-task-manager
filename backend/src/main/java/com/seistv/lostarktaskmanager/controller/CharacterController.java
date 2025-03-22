@@ -13,12 +13,12 @@ import com.seistv.lostarktaskmanager.model.UserCharacter;
 import com.seistv.lostarktaskmanager.repository.UserCharacterRepository;
 
 @RestController
-@RequestMapping("/api/characters")
+@RequestMapping("/api")
 public class CharacterController {
     @Autowired
     private UserCharacterRepository userCharacterRepository;
 
-    @GetMapping
+    @GetMapping("/characters")
     public List<UserCharacter> getAllCharacters() {
         return userCharacterRepository.findAll();
     }

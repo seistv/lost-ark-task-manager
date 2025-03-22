@@ -2,8 +2,7 @@ package com.seistv.lostarktaskmanager.model;
 
 import java.sql.Timestamp;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,7 +34,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "character_id", referencedColumnName = "character_id")
-    @JsonIgnore
+    @JsonBackReference
     private UserCharacter character;
 
     // Default constructor

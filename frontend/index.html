@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lost Ark Task Manager</title>
+    <title>Lost Ark Task Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js" defer></script>
+    <script src="services/taskService.js" defer></script>
 </head>
-<body>
-    <h1>Welcome to the Lost Ark Task Manager</h1>
-    <script src="app.js"></script>
+<body ng-app="LostArkApp" ng-controller="TaskController">
+    <div class="container">
+        <h1>Lost Ark Task Tracker</h1>
+        
+        <div>
+            <h2>Dailies</h2>
+            <ul>
+                <li ng-repeat="task in dailyTasks">{{ task.name }} - {{ task.status }}</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Weeklies</h2>
+            <ul>
+                <li ng-repeat="task in weeklyTasks">{{ task.name }} - {{ task.status }}</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

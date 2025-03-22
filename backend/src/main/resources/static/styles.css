@@ -1,0 +1,57 @@
+body {
+    background-color: #1e1e2e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+th {
+    background-color: #4a235a; /* Dark purple */
+    color: white;
+}
+
+td {
+    background-color: #2e4053; /* Dark blue-gray */
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 900px; /* Limit overall container width */
+    margin: auto; /* Center content */
+    padding: 20px;
+}
+
+/* Ensure tables are well-aligned and compact */
+.table-container {
+    max-width: 800px; /* Set max width to prevent stretching */
+    margin: 20px auto; /* Center tables and add spacing */
+    overflow-x: auto; /* Enable scrolling if needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Allow columns to adjust */
+}
+
+/* Style headers and cells */
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap; /* Prevent columns from stretching too much */
+}
+
+/* Ensure first column (Tasks/Raid Names) has enough space */
+th:first-child, td:first-child {
+    width: 50%; /* Give first column more space */
+}
+
+/* Ensure checkboxes are properly aligned */
+input[type="checkbox"] {
+    transform: scale(1.1);
+    margin: auto;
+}
