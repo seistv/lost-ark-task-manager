@@ -24,13 +24,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-if="uniqueTasks.length === 0">
+                    <tr ng-if="tasks.length === 0">
                         <td colspan="100%">No tasks available</td>
                     </tr>
-                    <tr ng-repeat="task in uniqueTasks">
+                    <tr ng-repeat="task in tasks">
                         <td>{{ task.taskName }}</td>
                         <td ng-repeat="character in characters">
-                            <input type="checkbox" ng-model="taskStatus[character.characterId][task.taskId]" 
+                            <input type="checkbox" 
+                                   ng-model="taskStatus[character.characterId][task.taskId]" 
                                    ng-change="toggleTask(character.characterId, task.taskId)">
                         </td>
                     </tr>
@@ -53,11 +54,11 @@
                         <td colspan="100%">No raids available</td>
                     </tr>
                     <tr ng-repeat="raid in raids">
-                        <td>{{ raid.raidName }}</td>
+                        <td>{{ raid.taskName }}</td>
                         <td ng-repeat="character in characters">
                             <input type="checkbox" 
-                                   ng-model="goldEarningRaids[character.characterId][raid.raidId]"
-                                   ng-change="toggleGoldEarningRaid(character.characterId, raid.raidId)">
+                                   ng-model="goldEarningRaids[character.characterId][raid.taskId]"
+                                   ng-change="toggleGoldEarningRaid(character.characterId, raid.taskId)">
                         </td>
                     </tr>
                 </tbody>
