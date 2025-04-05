@@ -1,0 +1,46 @@
+<div>
+    <button class="btn btn-info mb-2" data-bs-toggle="collapse" data-bs-target="#tasksTable">
+      Toggle Tasks Table
+    </button>
+    <div id="tasksTable" class="collapse">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th *ngFor="let character of userCharacters">{{ character.characterName }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of uniqueTasks">
+            <td>{{ task }}</td>
+            <td *ngFor="let character of userCharacters">
+                <input type="checkbox" [(ngModel)]="getCharacterTaskStatus(task, character.characterId).completed" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="btn btn-warning mb-2" data-bs-toggle="collapse" data-bs-target="#raidsTable">
+      Toggle Raids Table
+    </button>
+    <div id="raidsTable" class="collapse">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Raid</th>
+            <th *ngFor="let character of userCharacters">{{ character.characterName }}</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let raid of uniqueRaids">
+                <td>{{ raid }}</td>
+                <td *ngFor="let character of userCharacters">
+                    <input type="checkbox" [(ngModel)]="getCharacterTaskStatus(raid, character.characterId).completed" />
+                </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+
+  </div>

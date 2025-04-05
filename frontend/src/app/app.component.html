@@ -1,0 +1,82 @@
+<div class="container mt-3">
+
+  <!-- Light/Dark Mode Toggle -->
+  <button (click)="toggleTheme()" class="btn theme-toggle-btn ms-3">
+    <i [ngClass]="isDarkMode ? 'bi bi-sun' : 'bi bi-moon'"></i>
+  </button>  
+  <app-character-task></app-character-task>
+  <!-- Login Button -->
+  <!-- <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+    Login
+  </button> -->
+
+  <!-- Login Modal -->
+  <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" placeholder="Username">
+          <input type="password" class="form-control mt-2" placeholder="Password">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Show Tables Only After Login -->
+  <!-- <div *ngIf="isLoggedIn">
+    <p *ngIf="!isLoggedIn" class="text-danger">You are not logged in.</p>
+    <p *ngIf="isLoggedIn" class="text-success">You are logged in!</p> -->
+    <!-- Tasks Table -->
+    <!-- <button class="btn btn-info mb-2" data-bs-toggle="collapse" data-bs-target="#tasksTable">
+      Toggle Tasks Table
+    </button>
+    <div id="tasksTable" class="collapse">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Character Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <td>{{ task.taskName }}</td>
+            <td>{{ task.characterName }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+    <!-- Raids Table -->
+    <!-- <button class="btn btn-warning mb-2" data-bs-toggle="collapse" data-bs-target="#raidsTable">
+      Toggle Raids Table
+    </button>
+    <div id="raidsTable" class="collapse">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Raid</th>
+            <th>Character Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let raid of raids">
+            <td>{{ raid.raidName }}</td>
+            <td>{{ raid.characterName }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+  <!-- </div> -->
+</div>
+
+<!-- <router-outlet /> -->

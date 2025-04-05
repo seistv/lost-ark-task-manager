@@ -2,6 +2,7 @@ package com.seistv.lostarktaskmanager.service.impl;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.seistv.lostarktaskmanager.model.CharacterTask;
@@ -19,7 +20,7 @@ public class CharacterTaskServiceImpl implements CharacterTaskService {
 
 	@Override
 	public List<CharacterTask> getAllCharacterTasks() {
-		return characterTaskRepository.findAll();
+		return characterTaskRepository.findAll(Sort.by(Sort.Direction.ASC, "taskId"));
 	}
 
 }

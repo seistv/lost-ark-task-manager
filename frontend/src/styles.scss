@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+// @import 'bootstrap/scss/bootstrap';
+.dark-mode {
+    background-color: #121212;
+    color: white;
+  
+    .btn {
+      background-color: #1f1f1f;
+      color: white;
+      border: 1px solid white;
+    }
+  
+    table {
+      background-color: #1f1f1f;
+      color: white;
+    }
+  }
+
+  .theme-toggle-btn {
+    background-color: black; /* Dark button in light mode */
+    color: white; /* White text/icon */
+    border: 1px solid black;
+  }
